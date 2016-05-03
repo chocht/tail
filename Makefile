@@ -5,7 +5,7 @@
 ## Login   <chauch_p@epitech.net>
 ## 
 ## Started on  Tue May  3 10:18:50 2016 Pierre Chauchoy
-## Last update Tue May  3 10:19:34 2016 Pierre Chauchoy
+## Last update Tue May  3 14:23:18 2016 Pierre Chauchoy
 ##
 
 CC		= gcc
@@ -18,6 +18,10 @@ DIR		= srcs
 
 SRCS		= $(DIR)/main.c \
 		  $(DIR)/list_swap.c \
+		  $(DIR)/parsing.c \
+		  $(DIR)/args_simple.c \
+		  $(DIR)/args_short.c \
+		  $(DIR)/args_long.c \
 		  $(DIR)/list.c
 
 OBJS		= $(SRCS:.c=.o)

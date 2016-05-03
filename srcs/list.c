@@ -5,11 +5,12 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue Apr 12 03:32:05 2016 Pierre Chauchoy
-** Last update Tue May  3 10:06:09 2016 Pierre Chauchoy
+** Last update Tue May  3 14:52:50 2016 Pierre Chauchoy
 */
 
 #include <stdlib.h>
-#include "list.h"
+#include "tail.h"
+#include "my.h"
 
 void		init_list(t_list *list)
 {
@@ -24,16 +25,22 @@ void		show_list(t_list *list)
 
   tmp = list->head;
   while (tmp)
-    tmp = tmp->next;
+    {
+      my_putstr(tmp->file);
+      my_putchar('\n');
+      tmp = tmp->next;
+    }
 }
 
-int		add_list(t_list *list)
+int		add_list(t_list *list, char *s)
 {
   t_elem	*new;
 
   if (!(list) || !(new = malloc(sizeof(t_elem))))
     return (1);
   new->next = NULL;
+  if (!(new->file = my_strdup(s)))
+    return (1);
   if (list->tail == NULL)
     {
       new->prev = NULL;
@@ -61,8 +68,8 @@ int		free_list(t_list *list)
     {
       old = tmp;
       tmp = tmp->next;
+      free(old->file);
       free(old);
     }
-  free(list);
   return (0);
 }

@@ -5,11 +5,11 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue Apr 12 03:29:26 2016 Pierre Chauchoy
-** Last update Tue May  3 10:20:24 2016 Pierre Chauchoy
+** Last update Tue May  3 10:30:00 2016 Pierre Chauchoy
 */
 
 #include <stdlib.h>
-#include "list.h"
+#include "tail.h"
 
 static void	swap_elem2(t_list	*list,
 			   t_elem	*tmp1,
