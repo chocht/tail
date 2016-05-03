@@ -5,7 +5,7 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue May  3 14:19:58 2016 Pierre Chauchoy
-** Last update Tue May  3 14:25:37 2016 Pierre Chauchoy
+** Last update Tue May  3 15:19:52 2016 Pierre Chauchoy
 */
 
 #include "tail.h"
@@ -13,8 +13,6 @@
 
 int		p_bytes(t_parsing *parsing, char *s)
 {
-  if (!s)
-    return (1);
   if (my_str_isnum(s))
     return (1);
   parsing->bytes = my_getnbr(s);
@@ -24,8 +22,6 @@ int		p_bytes(t_parsing *parsing, char *s)
 
 int		p_lines(t_parsing *parsing, char *s)
 {
-  if (!s)
-    return (1);
   if (my_str_isnum(s))
     return (1);
   parsing->lines = my_getnbr(s);

@@ -5,7 +5,7 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue May  3 10:29:26 2016 Pierre Chauchoy
-** Last update Tue May  3 14:46:19 2016 Pierre Chauchoy
+** Last update Tue May  3 15:53:42 2016 Pierre Chauchoy
 */
 
 #ifndef TAIL_H_
@@ -45,14 +45,13 @@ typedef struct		s_parsing
   char			*simple_args[NB_SIMPLE_ARGS + 1];
   char			*short_args[NB_SHORT_ARGS + 1];
   char			*long_args[NB_LONG_ARGS + 1];
-  void			(*args_simple[NB_SIMPLE_ARGS + 1])(struct s_parsing*);
+  int			(*args_simple[NB_SIMPLE_ARGS + 1])(struct s_parsing*);
   int			(*args_short[NB_SHORT_ARGS + 1])(struct s_parsing*, char*);
   int			(*args_long[NB_LONG_ARGS + 1])(struct s_parsing*, char*);
   int		        starting_line;
   int			lines;
   int			bytes;
   int			verbose;
-  int			help;
   int			index;
 }			t_parsing;
 
@@ -70,8 +69,8 @@ typedef struct		s_tail
 void			init_parsing(t_parsing*);
 int			parsing(char**, t_tail*);
 
-void			p_verb(t_parsing*);
-void			p_help(t_parsing*);
+int			p_verb(t_parsing*);
+int			p_help(t_parsing*);
 
 int			p_bytes(t_parsing*, char*);
 int			p_lines(t_parsing*, char*);
