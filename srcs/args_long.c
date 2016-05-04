@@ -5,7 +5,7 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue May  3 14:22:47 2016 Pierre Chauchoy
-** Last update Tue May  3 15:22:26 2016 Pierre Chauchoy
+** Last update Wed May  4 09:09:09 2016 Pierre Chauchoy
 */
 
 #include "tail.h"
@@ -13,16 +13,18 @@
 
 int		p_lines_l(t_parsing *parsing, char *s)
 {
-  if (my_str_isnum(&s[my_strlen(LINES_LONG)]))
+  if (my_str_isnum(&s[my_strlen(LINES_LONG) + 1]))
     return (1);
-  parsing->lines = my_getnbr(&s[my_strlen(LINES_LONG)]);
+  parsing->lines = my_getnbr(&s[my_strlen(LINES_LONG) + 1]);
+  parsing->index = 0;
   return (0);
 }
 
 int		p_bytes_l(t_parsing *parsing, char *s)
 {
-  if (my_str_isnum(&s[my_strlen(BYTES_LONG)]))
+  if (my_str_isnum(&s[my_strlen(BYTES_LONG) + 1]))
     return (1);
-  parsing->bytes = my_getnbr(&s[my_strlen(BYTES_LONG)]);
+  parsing->bytes = my_getnbr(&s[my_strlen(BYTES_LONG) + 1]);
+  parsing->index = 1;
   return (0);
 }

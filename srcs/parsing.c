@@ -5,7 +5,7 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue May  3 12:06:02 2016 Pierre Chauchoy
-** Last update Tue May  3 17:11:17 2016 Pierre Chauchoy
+** Last update Wed May  4 09:06:54 2016 Pierre Chauchoy
 */
 
 #include <stdlib.h>
@@ -59,10 +59,11 @@ static int	long_parsing(t_list *files, t_parsing *parsing,
   int		len;
 
   j = -1;
-  len = my_strlen(argv[*i]);
+  len = my_strlen(parsing->long_args[j + 1]);
   while (parsing->long_args[++j] &&
 	 (my_strncmp(parsing->long_args[j], argv[*i], len) == 0 ?
-	  (parsing->long_args[j][len] != '=' ? 0 : 1) : 0) == 0);
+	  (argv[*i][len] != '=' ? 0 : 1) : 0) == 0)
+    len = my_strlen(parsing->long_args[j]);
   if (parsing->args_long[j])
     {
       if (parsing->args_long[j](parsing, argv[*i]))

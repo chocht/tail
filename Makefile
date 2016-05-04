@@ -5,7 +5,7 @@
 ## Login   <chauch_p@epitech.net>
 ## 
 ## Started on  Tue May  3 10:18:50 2016 Pierre Chauchoy
-## Last update Tue May  3 14:23:18 2016 Pierre Chauchoy
+## Last update Wed May  4 08:58:20 2016 Pierre Chauchoy
 ##
 
 CC		= gcc
@@ -19,6 +19,9 @@ DIR		= srcs
 SRCS		= $(DIR)/main.c \
 		  $(DIR)/list_swap.c \
 		  $(DIR)/parsing.c \
+		  $(DIR)/my_tail.c \
+		  $(DIR)/display.c \
+		  $(DIR)/display2.c \
 		  $(DIR)/args_simple.c \
 		  $(DIR)/args_short.c \
 		  $(DIR)/args_long.c \

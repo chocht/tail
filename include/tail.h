@@ -5,7 +5,7 @@
 ** Login   <chauch_p@epitech.net>
 ** 
 ** Started on  Tue May  3 10:29:26 2016 Pierre Chauchoy
-** Last update Tue May  3 15:53:42 2016 Pierre Chauchoy
+** Last update Wed May  4 09:03:58 2016 Pierre Chauchoy
 */
 
 #ifndef TAIL_H_
@@ -22,8 +22,8 @@
 # define LINES_SHORT	"-n"
 # define NB_SHORT_ARGS	2
 
-# define BYTES_LONG	"--bytes="
-# define LINES_LONG	"--lines="
+# define BYTES_LONG	"--bytes"
+# define LINES_LONG	"--lines"
 # define NB_LONG_ARGS	2
 
 typedef struct		s_elem
@@ -59,14 +59,22 @@ typedef struct		s_tail
 {
   t_list		files;
   t_parsing		parsing;
-  int			(*parsing_func[2])(t_list*);
+  int			(*parsing_func[2])(t_list*, t_parsing);
 }			t_tail;
+
+/*
+** tail
+*/
+
+int			disp_with_lines(t_list*, t_parsing);
+int			disp_with_bytes(t_list*, t_parsing);
+int			loop_disp(t_tail*);
+int			my_tail(char**);
 
 /*
 ** parsing
 */
 
-void			init_parsing(t_parsing*);
 int			parsing(char**, t_tail*);
 
 int			p_verb(t_parsing*);
